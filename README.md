@@ -12,17 +12,7 @@ This system follows modern Java backend best practices and demonstrates how to b
 3. [Features](#features)  
 4. [Architecture](#architecture)  
 5. [Why DTOs?](#why-dtos)  
-6. [Entity vs DTO Mapping](#entity-vs-dto-mapping)  
-7. [Validation](#validation)  
-8. [Error Handling](#error-handling)  
-9. [Technologies Used](#technologies-used)  
-10. [Database Design](#database-design)  
-11. [Setup Instructions](#setup-instructions)  
-12. [API Endpoints & Sample Requests](#api-endpoints--sample-requests)  
-13. [Testing](#testing)  
-14. [Best Practices Followed](#best-practices-followed)  
-15. [Future Improvements](#future-improvements)  
-16. [License](#license)  
+
 
 ---
 
@@ -140,6 +130,7 @@ public class StudentResponseDTO {
     private String name;
     private String email;  // password excluded
 }
+
 
 
 
