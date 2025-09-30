@@ -93,3 +93,53 @@ The project follows a **layered architecture** for scalability and maintainabili
    - Mapped using JPA annotations  
 
 **Diagram (conceptual)**:  
+
+
+---
+
+## Why DTOs?
+
+DTOs are used for:
+
+1. **Security**  
+   - Prevent exposing sensitive fields like passwords and internal IDs  
+2. **Flexibility**  
+   - API can evolve independently from the database schema  
+3. **Validation**  
+   - Apply request-specific validations  
+4. **Decoupling**  
+   - Entities are tied to the DB, DTOs are tied to the API contract  
+5. **Performance**  
+   - Only required data is sent, reducing payload size  
+
+---
+
+## Entity vs DTO Mapping
+
+**Example:**
+
+```java
+// Entity
+@Entity
+public class Student {
+    private Long id;
+    private String fullName;
+    private String email;
+    private String password;  // sensitive
+}
+
+// Create DTO
+public class StudentCreateDTO {
+    private String name;
+    private String email;
+    private String password;
+}
+
+// Response DTO
+public class StudentResponseDTO {
+    private String name;
+    private String email;  // password excluded
+}
+
+
+
